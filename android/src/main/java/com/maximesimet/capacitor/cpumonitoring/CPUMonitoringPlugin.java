@@ -12,11 +12,11 @@ public class CPUMonitoringPlugin extends Plugin {
     private CPUMonitoring implementation = new CPUMonitoring();
 
     @PluginMethod
-    public void echo(PluginCall call) {
+    public void getInfo(PluginCall call) {
         String value = call.getString("value");
 
         JSObject ret = new JSObject();
-        ret.put("value", implementation.echo(value));
+        ret.put("value", implementation.getInfo());
         call.resolve(ret);
     }
 }
